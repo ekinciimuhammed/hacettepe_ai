@@ -1,0 +1,8 @@
+pymupdf
+pytesseract
+requests
+lancedb
+watchdog
+numpy
+pandas
+pyarrow

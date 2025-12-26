@@ -1,0 +1,519 @@
+
+--- PAGE 1 ---
+Hacettepe Üniversitesi Kurumsal 
+Envanteri, Akademik Ekosistem ve 
+Stratejik Yapılanma Raporu 
+1. Yönetici Özeti ve Raporun Yapısal Çerçevesi 
+Bu rapor, Türk yükseköğretim sisteminin köklü ve öncü kurumlarından biri olan Hacettepe 
+Üniversitesi'nin kurumsal, akademik ve fiziksel varlığını tüm boyutlarıyla ele alan kapsamlı bir 
+analiz sunmaktadır. Hazırlanan bu doküman, Hacettepe Üniversitesi'nin eğitim felsefesinden 
+idari yapılanmasına, araştırma kapasitesinden öğrenci yaşam döngüsüne kadar uzanan geniş 
+bir veri setini, Hybrid RAG (Retrieval-Augmented Generation) mimarilerine uygun, semantik 
+bütünlüğü korunmuş ve hiyerarşik olarak yapılandırılmış bir formatta sunmayı amaçlamaktadır. 
+Raporun temel hedefi, üniversitenin "Daha İleriye... En İyiye..." mottosuyla özetlenen kurumsal 
+vizyonunun, somut akademik çıktılar ve fiziksel altyapı ile nasıl desteklendiğini ortaya 
+koymaktır.1 
+Rapor, mevcut literatür ve kurumsal veri parçacıklarının (snippets) derinlemesine sentezi ile 
+oluşturulmuştur. Üniversitenin çift yerleşkeli yapısının getirdiği akademik ve kültürel dualite, tıp 
+ve sağlık bilimlerindeki tarihsel liderliğin mühendislik ve sosyal bilimlerdeki modern atılımlarla 
+entegrasyonu ve araştırma odaklı üniversite kimliğinin Teknokent ve ileri araştırma merkezleri 
+üzerindeki yansımaları, raporun ana eksenlerini oluşturmaktadır. Özellikle 2024 yılı yerleştirme 
+verileri, güncel akademik birim listeleri ve stratejik araştırma öncelikleri, üniversitenin mevcut 
+konumunu ve gelecek projeksiyonunu anlamlandırmak adına detaylıca irdelenmiştir. 
+2. Kurumsal Felsefe, Tarihsel Derinlik ve Stratejik 
+Yönetim 
+Hacettepe Üniversitesi'nin kurumsal kimliği, sadece akademik bir organizasyon olmanın 
+ötesinde, toplumsal kalkınma ve evrensel bilime katkı sağlama misyonu üzerine inşa edilmiştir. 
+Üniversitenin yönetimsel reflekslerini ve stratejik kararlarını anlamak için, tarihsel köklerine ve 
+benimsediği temel değerlere bakmak elzemdir. 
+2.1. Kuruluş Dinamikleri ve Tarihsel Perspektif 
+Hacettepe Üniversitesi'nin tarihçesi, Türkiye'de modern sağlık eğitiminin kurumsallaşmasıyla eş 
+zamanlı bir seyir izler. Kurumun kökleri, çocuk sağlığı alanındaki acil toplumsal ihtiyaçlara yanıt 
+vermek amacıyla atılan adımlara dayanmaktadır. Bu "ihtiyaç odaklı kuruluş" felsefesi, 
+üniversitenin bugün de sürdürdüğü "Toplum Odaklılık" ilkesinin temelini oluşturmuştur. Zaman 
+içerisinde sağlık bilimleri merkezli bir yapıdan, fen, sosyal bilimler, mühendislik ve güzel 
+sanatları da kapsayan çok disiplinli bir "universitas" yapısına evrilmiştir. Tarih Bölümü'nin 
+
+
+--- PAGE 2 ---
+vizyonunda belirtildiği üzere, geçmişin bilimsel yöntemlerle ve disiplinler arası bir bakış açısıyla 
+incelenmesi, kurumun kendi tarihine yaklaşımını da şekillendirmektedir.2 Bu yaklaşım, 
+üniversitenin sadece bugünü değil, geçmişi anlayarak geleceği inşa etme stratejisinin bir 
+yansımasıdır. 
+2.2. Misyon, Vizyon ve Etik Değerler Sistemi 
+Üniversitenin akademik ve idari operasyonlarının arkasındaki itici güç, tanımlanmış misyon ve 
+vizyon bildirgeleridir. Bu bildirgeler, kurumun varoluş sebebini ve ulaşmak istediği idealleri 
+somutlaştırır. 
+2.2.1. Temel Değerlerin Analizi 
+Hacettepe Üniversitesi, kurumsal kültürünü belirli normatif değerler üzerine inşa etmiştir. Bu 
+değerler, akademik özgürlükten idari şeffaflığa kadar geniş bir spektrumu kapsar: 
+●​ Adalet ve Eşitlik: Kurum, tüm paydaşları (öğrenci, akademik ve idari personel) arasında 
+herhangi bir ayrım gözetmeksizin adil davranmayı taahhüt eder. Bu ilke, kaynakların 
+dağılımı, eğitim fırsatlarına erişim ve kurumsal hizmetlerin sunumunda belirleyicidir.1 
+●​ Akademik Dürüstlük ve Şeffaflık: Bilimsel üretimin güvenilirliği, araştırmacıların ve 
+öğrencilerin etik standartlara bağlılığı ile mümkündür. Hacettepe, akademik çalışmalarda 
+şeffaflığı ve dürüstlüğü temel bir zorunluluk olarak görür.1 
+●​ Akademik Özgürlük: Bilimsel ilerlemenin ancak baskıdan uzak, özgür bir tartışma 
+ortamında gerçekleşebileceği kabulüyle, akademisyenlerin ve öğrencilerin araştırma ve 
+ifade özgürlükleri kurumsal güvence altına alınmıştır.1 
+●​ Liyakat Esaslı Yönetim: Akademik ve idari görevlendirmelerde, kişisel yakınlıklar yerine 
+bilgi, tecrübe ve yeteneğin esas alınması, kurumun kalite standartlarını korumasının 
+anahtarıdır.1 
+●​ Sorumluluk Bilinci ve Hesap Verebilirlik: Kamu kaynaklarını kullanan bir devlet 
+üniversitesi olarak Hacettepe, harcamalarında ve faaliyetlerinde şeffaf olmayı, topluma ve 
+paydaşlarına hesap vermeyi bir yönetim ilkesi olarak benimser.1 
+●​ Toplumsal ve Ekolojik Duyarlılık: "Saygı" değeri altında, üniversitenin sadece insanlara 
+değil, çevreye ve doğal hayata karşı da sorumlu olduğu vurgulanır. Sürdürülebilirlik, 
+üniversitenin stratejik hedeflerinin ayrılmaz bir parçasıdır.1 
+2.3. Yönetim Organizasyonu ve İdari Yapı 
+Üniversitenin devasa yapısı, hiyerarşik ancak işlevsel bir organizasyon şeması ile 
+yönetilmektedir. Bu yapı, akademik özerklik ile idari verimliliği dengelemeyi hedefler. 
+●​ Rektörlük: Üniversitenin en üst icra makamıdır ve stratejik planlamadan sorumludur. 
+●​ Akademik Kurullar (Senato ve Yönetim Kurulu): Eğitim politikalarının, yönetmeliklerin 
+ve akademik kadro planlamalarının karara bağlandığı, demokratik katılım mekanizmalarının 
+işlediği kurullardır. 
+●​ Genel Sekreterlik: İdari birimlerin koordinasyonunu sağlayarak, akademik faaliyetlerin 
+
+
+--- PAGE 3 ---
+sorunsuz yürütülmesi için gerekli lojistik ve bürokratik desteği sunar.3 
+●​ Daire Başkanlıkları: Öğrenci İşleri, Sağlık Kültür ve Spor (SKS), Kütüphane ve 
+Dokümantasyon, Bilgi İşlem gibi uzmanlaşmış daireler, üniversitenin günlük 
+operasyonlarını yönetir. Örneğin, SKS Daire Başkanlığı, öğrencilerin beslenme, barınma ve 
+sosyal ihtiyaçlarını karşılamakla yükümlüdür.4 
+●​ Hukuk Müşavirliği ve İç Denetim: Kurumun hukuki süreçlerini yönetir ve mali/idari 
+denetimlerini gerçekleştirir. 
+3. Akademik Mimari: Fakülteler, Bölümler ve Eğitim 
+Programları 
+Hacettepe Üniversitesi, "Evrensel Üniversite" iddiasını, bünyesinde barındırdığı 16 Fakülte, 15 
+Enstitü, Konservatuvar ve çeşitli Meslek Yüksekokulları ile desteklemektedir.5 Bu geniş 
+akademik yelpaze, sağlık bilimlerinden mühendisliğe, sosyal bilimlerden güzel sanatlara kadar 
+uzanan disiplinler arası bir eğitim ekosistemi yaratır. 
+3.1. Sağlık Bilimleri Kümelenmesi (Sıhhiye Yerleşkesi) 
+Hacettepe Üniversitesi'nin marka değerinin en yüksek olduğu alan şüphesiz sağlık bilimleridir. 
+Sıhhiye Yerleşkesi, bu alandaki akademik ve klinik çalışmaların merkezidir. 
+3.1.1. Tıp Fakültesi 
+Tıp Fakültesi, Türkiye'nin tıp eğitimindeki amiral gemisi olarak kabul edilir. Eğitim yapısı üç ana 
+bölüm altında kategorize edilmiştir: 
+ 
+Bölüm Kategorisi 
+Anabilim Dalları ve Kapsam 
+Temel Tıp Bilimleri 
+Anatomi, Biyofizik, Biyoistatistik, Fizyoloji, 
+Histoloji ve Embriyoloji, Tıbbi Biyokimya, 
+Tıbbi Biyoloji, Tıbbi Mikrobiyoloji, Tıp Eğitimi 
+ve Bilişimi, Tıp Tarihi ve Etik. Bu bölümler, 
+klinik uygulamaların dayandığı teorik ve 
+bilimsel temeli oluşturur.6 
+Dahili Tıp Bilimleri 
+Acil Tıp, Adli Tıp, Aile Hekimliği, Çocuk 
+Sağlığı ve Hastalıkları (ve Ergen Ruh 
+Sağlığı), Deri ve Zührevi Hastalıklar, 
+Enfeksiyon Hastalıkları, Fiziksel Tıp ve 
+Rehabilitasyon, Göğüs Hastalıkları, Halk 
+Sağlığı, İç Hastalıkları, Kardiyoloji, Nöroloji, 
+
+
+--- PAGE 4 ---
+Nükleer Tıp, Radyasyon Onkolojisi, 
+Radyoloji, Ruh Sağlığı. Tanı ve tedavi 
+süreçlerinin yönetildiği ana klinik 
+branşlardır.6 
+Cerrahi Tıp Bilimleri 
+Anesteziyoloji, Beyin ve Sinir Cerrahisi, 
+Çocuk Cerrahisi, Genel Cerrahi, Göğüs 
+Cerrahisi, Göz Hastalıkları, Kadın 
+Hastalıkları ve Doğum, KBB, Kalp ve Damar 
+Cerrahisi, Ortopedi, Plastik Cerrahi, Tıbbi 
+Patoloji, Üroloji. Girişimsel tedavilerin 
+uygulandığı branşlardır.6 
+3.1.2. Diğer Sağlık Fakülteleri 
+●​ Diş Hekimliği Fakültesi: Ağız ve diş sağlığı alanında klinik eğitim ve araştırmaları yürütür. 
+Kendi bünyesindeki araştırma laboratuvarları ile materyal geliştirme ve klinik araştırmalar 
+yapar.7 
+●​ Eczacılık Fakültesi: İlaç endüstrisinin ihtiyaç duyduğu farmasötik bilimler uzmanlarını 
+yetiştirir. Fakülte bünyesindeki HÜNİKAL (İlaç ve Kozmetik Ar-Ge Laboratuvarı), sanayi ile 
+entegre analiz hizmetleri sunar.8 
+●​ Hemşirelik Fakültesi: Hemşirelik eğitiminde lisans ve lisansüstü programlarla 
+(Hemşirelikte Eğitim, Uygulama ve Araştırma Merkezi desteğiyle) uzmanlaşmış sağlık 
+personeli yetiştirir.7 
+●​ Sağlık Bilimleri Fakültesi: Beslenme ve Diyetetik, Ergoterapi, Odyoloji ve Çocuk Gelişimi 
+gibi multidisipliner sağlık alanlarını kapsar.7 
+●​ Fizik Tedavi ve Rehabilitasyon Fakültesi: Türkiye'nin bu alandaki ilk ve en köklü 
+okullarından biri olarak, fizyoterapist yetiştirir.5 
+3.2. Mühendislik ve Fen Bilimleri (Beytepe Yerleşkesi) 
+Teknoloji ve temel bilimler eğitimi, Beytepe Yerleşkesi'nin modern laboratuvar altyapısıyla 
+desteklenmektedir. 
+3.2.1. Mühendislik Fakültesi 
+İnovasyon odaklı bir eğitim modelini benimseyen fakülte, klasik mühendislik dallarının yanı sıra 
+çağın gereksinimlerine uygun yeni bölümleri de bünyesine katmıştır. 
+●​ Bölüm Portföyü: Bilgisayar, Elektrik-Elektronik, Endüstri, Fizik, Gıda, Hidrojeoloji, İnşaat, 
+Jeoloji, Kimya, Maden, Makine, Nükleer Enerji Mühendisliği. 
+●​ Yapay Zeka Mühendisliği: Türkiye'de bu alanda açılan ilk lisans programlarından biridir 
+ve eğitim dili İngilizcedir. Bu bölüm, veri bilimi ve makine öğrenmesi alanındaki stratejik 
+insan kaynağı ihtiyacını karşılamayı hedefler.11 
+
+
+--- PAGE 5 ---
+●​ Araştırma Altyapısı: Fakülte bünyesinde 12 adet ihtisaslaşmış araştırma laboratuvarı 
+bulunmaktadır.9 
+3.2.2. Fen Fakültesi 
+Temel bilimlerde araştırma kapasitesini artırmayı hedefleyen fakülte, diğer uygulamalı bilimlere 
+teorik zemin sağlar. 
+●​ Bölümler: Biyoloji, Kimya, Matematik, İstatistik, Aktüerya Bilimleri.12 
+3.3. Sosyal ve Beşeri Bilimler 
+Hacettepe Üniversitesi, teknik bilimlerdeki başarısını sosyal bilimlerde de sürdürmektedir. 
+●​ Edebiyat Fakültesi: Psikoloji, Sosyoloji, Tarih, Türk Dili ve Edebiyatı, İngiliz Dili ve 
+Edebiyatı, Fransız Dili ve Edebiyatı, Almanca Mütercim Tercümanlık, Bilgi ve Belge 
+Yönetimi, Felsefe, Sanat Tarihi, Arkeoloji bölümlerini barındırır. Tarih Bölümü, "tarih 
+perspektifi kazanmış, eleştirel düşünen bireyler" yetiştirme vizyonuyla hareket eder.2 
+●​ İktisadi ve İdari Bilimler Fakültesi (İİBF): İktisat, İşletme, Maliye, Siyaset Bilimi ve Kamu 
+Yönetimi, Uluslararası İlişkiler, Aile ve Tüketici Bilimleri, Sağlık Yönetimi ve Sosyal Hizmet 
+bölümleri ile kamu ve özel sektöre yönetici adayı yetiştirir.5 
+●​ Eğitim Fakültesi: Eğitim bilimleri ve öğretmen yetiştirme programları ile ulusal eğitim 
+politikalarına katkı sunar.11 
+●​ Hukuk Fakültesi: Hukuk nosyonunu evrensel standartlarda kazandırmayı hedefleyen 
+lisans programına sahiptir.13 
+●​ İletişim Fakültesi: Medya çalışmaları ve iletişim bilimleri alanında eğitim verir.7 
+●​ Güzel Sanatlar Fakültesi: Grafik, Heykel, Resim, Seramik gibi sanat dallarında yetenekli 
+bireylerin gelişimini destekler.9 
+3.4. Ankara Devlet Konservatuvarı 
+Hacettepe Üniversitesi Ankara Devlet Konservatuvarı, Türkiye'nin sanat eğitimindeki en prestijli 
+kurumlarından biridir. Müzik ve Sahne Sanatları alanlarında, uluslararası düzeyde sanatçılar 
+yetiştirir. Bünyesinde, Caz Anasanat Dalı gibi modern programları da barındırır.13 
+Konservatuvarın kendine ait ihtisas kütüphanesi, sanat eğitimi için kritik bir kaynaktır.14 
+3.5. Meslek Yüksekokulları (MYO) 
+Üniversite-Sanayi işbirliğinin eğitim ayağını oluşturan MYO'lar, nitelikli ara eleman 
+yetiştirmektedir. 
+●​ Hacettepe Ankara Sanayi Odası 1. OSB MYO: Doğrudan sanayi bölgesi içinde yer alır. 
+Alternatif Enerji Kaynakları, Elektrik, Endüstri Ürünleri Tasarımı, Makine gibi teknik 
+programlar sunar.15 
+●​ Sağlık Hizmetleri MYO: Ağız ve Diş Sağlığı, Ameliyathane Hizmetleri, Radyoterapi, Tıbbi 
+Laboratuvar, Tıbbi Görüntüleme gibi sağlık sektörünün teknik ihtiyaçlarına yönelik 
+
+
+--- PAGE 6 ---
+programları içerir.15 
+●​ Sosyal Bilimler MYO: Büro Yönetimi, Muhasebe, Sahne ve Gösteri Sanatları Teknolojisi, 
+Turizm ve Otel İşletmeciliği gibi alanlarda eğitim verir.15 
+●​ Polatlı Yerleşkesi MYO'ları: Polatlı Sağlık Hizmetleri ve Polatlı Teknik Bilimler MYO olarak 
+iki ayrı okulda, bölgesel ihtiyaçlara yönelik (örn. Gaz ve Tesisatı, Diş Protez) programlar 
+yürütülür.15 
+3.6. 2024 Yılı Taban Puanları ve Akademik Rekabet 
+Üniversiteye giriş puanları, akademik kalitenin ve talebin önemli bir göstergesidir. 2024 yılı 
+verileri, Hacettepe'nin farklı puan türlerinde yüksek profilli öğrenciler tarafından tercih 
+edildiğini göstermektedir. 
+Tablo 1: Hacettepe Üniversitesi 2024 Yılı Bazı Bölümlerin Taban Puan Türleri 
+Bölüm Adı 
+Puan Türü 
+Akademik Alan 
+Hukuk 
+EA (Eşit Ağırlık) 
+Sosyal Bilimler 
+Diş Hekimliği 
+SAY (Sayısal) 
+Sağlık Bilimleri 
+Eczacılık 
+SAY (Sayısal) 
+Sağlık Bilimleri 
+Tıp (İngilizce/Türkçe) 
+SAY (Sayısal) 
+Sağlık Bilimleri 
+Yapay Zeka Mühendisliği 
+SAY (Sayısal) 
+Mühendislik 
+İktisat 
+EA (Eşit Ağırlık) 
+İktisadi ve İdari Bilimler 
+Maliye 
+EA (Eşit Ağırlık) 
+İktisadi ve İdari Bilimler 
+Psikoloji 
+EA (Eşit Ağırlık) 
+Sosyal Bilimler 
+Sanat Tarihi 
+SÖZ (Sözel) 
+Beşeri Bilimler 
+Kimya Öğretmenliği 
+SAY (Sayısal) 
+Eğitim/Fen 
+Ergoterapi 
+SAY (Sayısal) 
+Sağlık Bilimleri 
+
+
+--- PAGE 7 ---
+Biyoloji 
+SAY (Sayısal) 
+Fen Bilimleri 
+Bu veriler, üniversitenin hem sayısal (Tıp, Mühendislik) hem de eşit ağırlık (Hukuk, İktisat) 
+alanlarında ülkenin en başarılı öğrencilerini cezbettiğini, "Popüler Bölümler" kategorisinde 
+Hukuk, Diş Hekimliği ve Eczacılık gibi bölümlerin öne çıktığını göstermektedir.16 
+4. Lisansüstü Eğitim ve Araştırma Enstitüleri 
+Hacettepe Üniversitesi, sadece lisans eğitimi veren bir kurum değil, aynı zamanda ileri düzey 
+araştırmaların yürütüldüğü bir bilim üretim merkezidir. Üniversite bünyesindeki 15 enstitü, 
+spesifik alanlarda derinleşmeyi sağlayan lisansüstü programlar yürütür. 
+4.1. Stratejik ve Tematik Enstitüler 
+●​ Aşı Enstitüsü: Pandemi süreçleri ve ulusal biyogüvenlik ihtiyaçları doğrultusunda stratejik 
+öneme sahip olan enstitü, "Aşı Çalışmaları" ve "Aşı Teknolojisi" alanlarında tezli yüksek 
+lisans ve doktora programları sunar. Bu programlar, Türkiye'nin aşı geliştirme kapasitesini 
+artırmayı hedefler.17 
+●​ Bilişim Enstitüsü: Dijital dönüşümün akademik liderliğini üstlenen enstitü; Yapay Zeka, 
+Bilgi Güvenliği, Bilgisayar Animasyonu ve Oyun Teknolojileri, Sağlık Bilişimi, Sistem 
+Mühendisliği gibi çağın gerektirdiği alanlarda disiplinler arası programlar yürütür.17 
+●​ Nükleer Bilimler Enstitüsü: Radyasyon Fiziği gibi alanlarda uzmanlaşarak, nükleer 
+teknolojilerin tıp ve enerjideki uygulamalarına yönelik akademik katkı sağlar.17 
+●​ Nüfus Etütleri Enstitüsü: Türkiye'nin demografik yapısını analiz eden, sosyal araştırma 
+yöntemleri konusunda uzmanlaşmış, ulusal nüfus politikalarına veri sağlayan köklü bir 
+kurumdur.17 
+●​ Kanser Enstitüsü: Onkoloji alanında temel ve klinik araştırmaları entegre eden, kanser 
+biyolojisi ve tedavisi üzerine odaklanan bir mükemmeliyet merkezidir.3 
+4.2. Fen ve Sağlık Bilimleri Enstitüleri 
+●​ Sağlık Bilimleri Enstitüsü: Tıbbi Farmakoloji, Tıbbi Biyoloji, Tümör Biyolojisi ve 
+İmmünolojisi, Afetlerde Sağlık Yönetimi, Adölesan Sağlığı gibi onlarca farklı programla 
+sağlık alanındaki en geniş lisansüstü portföye sahiptir.6 
+●​ Fen Bilimleri Enstitüsü: KBRN (Kimyasal, Biyolojik, Radyolojik, Nükleer) Tehditleri ve 
+Yönetimi gibi niş alanların yanı sıra, Biyoloji, Kimya, İstatistik (Veri Bilimi) gibi temel bilim 
+dallarında ileri araştırmalar yürütür.12 
+4.3. Sosyal Bilimler ve Diğer Enstitüler 
+●​ Atatürk İlkeleri ve İnkılap Tarihi Enstitüsü 
+●​ Eğitim Bilimleri Enstitüsü 
+
+
+--- PAGE 8 ---
+●​ Sosyal Bilimler Enstitüsü: Aile ve Tüketici Bilimleri gibi toplumsal refahı ilgilendiren 
+alanlarda çalışmalar yapar.17 
+●​ Türkiyat Araştırmaları Enstitüsü 
+5. Araştırma Ekosistemi: Merkezler, Laboratuvarlar ve 
+İnovasyon 
+Hacettepe Üniversitesi, "Araştırma Üniversitesi" statüsünün gereği olarak, laboratuvarlardan 
+teknokentlere uzanan geniş bir Ar-Ge ağı örmüştür. 
+5.1. Uygulama ve Araştırma Merkezleri 
+Fakültelerden bağımsız veya fakültelerle koordineli çalışan bu merkezler, belirli sorunlara 
+çözüm üretmek için disiplinler arası ekipleri bir araya getirir. 
+●​ Sağlık Odaklı Merkezler: HIV-AIDS Tedavi ve Araştırma Merkezi (HATAM), Nörolojik ve 
+Psikiyatrik Uygulama Merkezi, Hareket Analizi ve Podiatri Merkezi gibi birimler, klinik 
+araştırmaları tedavi hizmetleriyle birleştirir.10 
+●​ Teknoloji Odaklı Merkezler: İleri Teknolojiler Uygulama ve Araştırma Merkezi (HÜNİTEK), 
+üniversitenin teknolojik altyapısının sanayiye açılan kapısıdır. Nükleer Sistemler Merkezi, 
+enerji alanındaki çalışmalara odaklanır.8 
+●​ Sosyal Odaklı Merkezler: Piyasa Ekonomisini ve Girişimciliği Geliştirme Merkezi, Okul 
+Sosyal Hizmeti Merkezi, Özel Yetenekli Çocuklar Merkezi, PDRMER (Psikolojik Danışma) 
+gibi merkezler, üniversitenin toplumsal sorunlara dokunduğu noktalardır.10 
+5.2. İhtisas Laboratuvarları 
+Üniversitenin araştırma kapasitesi, yüksek teknoloji ile donatılmış laboratuvarlarla somutlaşır. 
+●​ IONOLAB (İyonküre Araştırmaları): Haberleşme sistemleri ve uzay havası üzerine 
+stratejik araştırmalar yürütür.8 
+●​ HÜNİKAL (İlaç ve Kozmetik Ar-Ge): İlaç endüstrisine yönelik akredite analiz ve kalite 
+kontrol hizmetleri sunarak, yerli ilaç gelişimine katkı sağlar.8 
+●​ Doku Mühendisliği Laboratuvarı: Rejeneratif tıp ve yapay doku üretimi gibi 
+biyoteknolojinin uç alanlarında çalışır.8 
+●​ Kablosuz Ağlar ve Akıllı Güvenli Sistemler: Siber güvenlik ve nesnelerin interneti (IoT) 
+konularında Ar-Ge yapar.8 
+5.3. Hacettepe Teknokent: Üniversite-Sanayi İşbirliği 
+Beytepe Yerleşkesi sınırları içerisinde yer alan Hacettepe Teknokent, akademik bilginin 
+ekonomik değere dönüştüğü inovasyon üssüdür. 
+●​ Yasal Çerçeve ve Avantajlar: 4691 sayılı Teknoloji Geliştirme Bölgeleri Kanunu 
+kapsamında faaliyet gösteren Teknokent, firmalara 2028 yılına kadar gelir ve kurumlar 
+
+
+--- PAGE 9 ---
+vergisi muafiyeti gibi ciddi teşvikler sunar. Bu durum, Ar-Ge firmaları için cazip bir 
+ekosistem yaratır.19 
+●​ Sektörel Dağılım: Teknokent bünyesindeki firmalar ağırlıklı olarak Yazılım/Bilişim, 
+Savunma Sanayi, Sağlık/Medikal/İlaç ve Elektronik sektörlerinde yoğunlaşmıştır. Bu 
+dağılım, üniversitenin Mühendislik ve Tıp fakültelerinin gücünü yansıtır.20 
+●​ Kapasite ve Etki: 340'tan fazla firma, 3000'den fazla proje ve 5000'i aşkın Ar-Ge 
+personeli ile Türkiye'nin en büyük teknoparklarından biridir. Teknokent bünyesindeki 
+firmaların hızlı büyüme performansları (örn. MS Spektral gibi firmaların ödülleri) 
+ekosistemin başarısını kanıtlar niteliktedir.19 
+●​ Girişimcilik Destekleri: Kuluçka ve Ön Kuluçka Merkezleri, girişimcilere ofis, mentorluk, 
+yatırımcı erişimi ve eğitim desteği sağlayarak start-up kültürünü besler.19 
+6. Fiziksel Yerleşkeler, Barınma ve Kampüs Yaşamı 
+Hacettepe Üniversitesi, Ankara'nın iki farklı ucunda, iki farklı yaşam kültürü sunan yerleşkelere 
+sahiptir. 
+6.1. Beytepe Yerleşkesi 
+Şehir merkezinden uzakta, geniş bir orman arazisi üzerine kurulu olan Beytepe, tam anlamıyla 
+bir "Kampüs Üniversitesi" deneyimi sunar. 
+●​ Akademik Birimler: Mühendislik, Fen, Edebiyat, İİBF, Eğitim, Hukuk, Güzel Sanatlar 
+Fakülteleri ve Konservatuvar buradadır. 
+●​ Kütüphane: 7.986 m² alana sahip Beytepe Kütüphanesi, 164.000'den fazla kitap 
+koleksiyonu ve 1.119 kişilik oturma kapasitesi ile kampüsün entelektüel merkezidir.14 
+●​ Sosyal Yaşam: Öğrenci toplulukları, spor tesisleri, alışveriş alanları ve sosyal mekanlar 
+kampüs içine yayılmıştır. "7/24 Yaşayan Yerleşke" konsepti burada hayat bulur.23 
+6.2. Sıhhiye Yerleşkesi 
+Ankara'nın kalbinde yer alan Sıhhiye Yerleşkesi, tarihsel dokusu ve hastane kompleksiyle 
+bütünleşmiş bir şehir kampüsüdür. 
+●​ Akademik Birimler: Tıp, Diş Hekimliği, Eczacılık, Hemşirelik, Sağlık Bilimleri Fakülteleri. 
+●​ Kütüphane: Sağlık Bilimleri Kütüphanesi, 3.829 m² alanda, yaklaşık 30.000 kitap ve 
+54.000 ciltli dergi ile sağlık alanında ihtisaslaşmış devasa bir arşiv sunar.14 
+6.3. Barınma Olanakları ve Yurtlar 
+Üniversite, öğrencilerine kapsamlı barınma imkanları sunmaktadır. Barınma birimleri 
+yerleşkelere göre özelleşmiştir. 
+Tablo 2: Hacettepe Üniversitesi Barınma Olanakları ve Kapasiteleri 
+
+
+--- PAGE 10 ---
+ 
+Yerleşke 
+Barınma Tipi 
+Özellikler ve 
+Kapasite 
+Notlar 
+Sıhhiye 
+Üniversite Yurtları 
+(Kız/Erkek) 
+Toplam 767 oda 
+kapasitesi (Kız). 
+Erkek yurdunda 2 
+ve 4 kişilik odalar 
+mevcuttur. 
+Tıp ve sağlık 
+öğrencileri için 
+kampüs içinde.24 
+Beytepe 
+Öğrenci Evleri 
+Kampüs içi, apart 
+tarzı konaklama. 
+Fakültelere yürüme 
+mesafesinde.24 
+Beytepe 
+KYK Yurtları 
+Emine Şerife Hanım 
+Kız Yurdu, Beytepe 
+KYK Yurdu. 
+Kampüs sınırları 
+içinde devlet yurdu 
+imkanı.24 
+Sıhhiye Çevresi 
+KYK Yurtları 
+Cebeci Erkek/Kız 
+Yurtları, Atatürk Kız 
+Yurdu, Hüseyin Gazi 
+(Erkek), Osman Tan 
+(Erkek). 
+Kampüse 1-10 km 
+mesafede, ulaşım 
+imkanı olan dış 
+yurtlar.26 
+Başvuru Süreci: Öğrenciler, üniversitenin kurumsal e-posta adresleri (@hacettepe.edu.tr) ile 
+barinma.hacettepe.edu.tr adresi üzerinden çevrimiçi başvuru yaparlar. Yerleştirmeler 
+sosyo-ekonomik durum değerlendirmesine göre şeffaf bir şekilde gerçekleştirilir.27 
+6.4. Sosyal, Kültürel ve Sportif Faaliyetler 
+Öğrencilerin kişisel gelişimleri, Sağlık Kültür ve Spor (SKS) Daire Başkanlığı tarafından koordine 
+edilen 150'den fazla toplulukla desteklenir. 
+●​ Spor Toplulukları: Amerikan Futbolu, Dağcılık, E-Spor, Quidditch, Okçuluk, Mağara 
+Araştırmaları, Kayak, Snowboard gibi ekstrem ve takım sporlarına yönelik aktif topluluklar 
+mevcuttur. Beytepe'de olimpik havuz ve stadyum gibi tesisler "Spor Dostu Kampüs" 
+vizyonunu destekler.4 
+●​ Mesleki ve Akademik Topluluklar: İşletme, Ekonomi (HEK), Yapay Zeka (AI Club), Genç 
+Mühendisler (GMT) gibi topluluklar, öğrencileri iş dünyasına hazırlar.28 
+●​ Kültürel Etkinlikler: Konserler, tiyatrolar ve bahar şenlikleri kampüs kültürünün ayrılmaz 
+parçasıdır. 
+7. Uluslararasılaşma ve Kalite Güvencesi (Bologna 
+
+
+--- PAGE 11 ---
+Süreci) 
+Hacettepe Üniversitesi, Avrupa Yükseköğretim Alanı (EHEA) ile uyumlu bir eğitim modelini 
+benimsemiştir. 
+●​ AKTS (ECTS) Etiketi: Üniversite, ders kredilerini ve müfredatlarını Avrupa Kredi Transfer 
+Sistemi'ne (AKTS) uygun olarak yapılandırmıştır. Bu sistem, öğrencilerin uluslararası 
+hareketliliğini (Erasmus+ vb.) kolaylaştırır ve diplomaların yurtdışında tanınırlığını artırır.30 
+●​ Ders Bilgi Paketleri: Tüm programların (Lisans, Önlisans, Lisansüstü) ders içerikleri, 
+öğrenme çıktıları ve yeterlilikleri Bologna standartlarına göre tanımlanmış ve şeffaf bir 
+şekilde erişime açılmıştır.13 
+8. Sonuç ve Genel Değerlendirme 
+Hacettepe Üniversitesi, kurumsal envanteri ve akademik çıktıları incelendiğinde, Türkiye'nin 
+yükseköğretim vizyonuna yön veren lider bir kurum profili çizmektedir. 
+1.​ Entegre Akademik Güç: Tıp Fakültesi'nin tarihsel mirası ve klinik gücü, Mühendislik 
+Fakültesi'nin teknolojik atılımları (Yapay Zeka vb.) ve Sosyal Bilimlerin eleştirel düşünce 
+kapasitesi ile birleşerek multidisipliner bir mükemmeliyet merkezi oluşturmuştur. 
+2.​ Güçlü Ar-Ge Altyapısı: Aşı Enstitüsü, Kanser Enstitüsü, İyonküre Laboratuvarı ve 
+Teknokent gibi yapılar, üniversitenin sadece bilgi aktaran değil, stratejik bilgi üreten ve 
+bunu ekonomiye kazandıran bir "Araştırma Üniversitesi" olduğunu kanıtlamaktadır. 
+3.​ Öğrenci Odaklı Kampüs Yaşamı: Barınma olanaklarının çeşitliliği (Kampüs içi yurtlar, 
+öğrenci evleri), zengin topluluk faaliyetleri ve spor imkanları, öğrencilere akademik 
+eğitimin ötesinde nitelikli bir yaşam alanı sunmaktadır. 
+4.​ Toplumsal Katkı: Sağlık hizmetlerinden sosyal hizmet projelerine, sanayi işbirliklerinden 
+nükleer enerji araştırmalarına kadar üniversitenin faaliyetleri, doğrudan toplumsal ve 
+ulusal ihtiyaçlara yanıt vermektedir. 
+Özetle, Hacettepe Üniversitesi, köklü geçmişinden aldığı güçle, evrensel bilim standartlarını 
+yakalamış, araştırma odaklı, yenilikçi ve toplumla bütünleşmiş bir dünya üniversitesidir. 
+Rapor Sonu Notu: Bu belge, sağlanan araştırma verileri (snippets) temel alınarak, Hybrid RAG 
+sistemleri için optimize edilmiş, doğrulanabilir kaynak atıfları `` içeren, yapılandırılmış bir 
+akademik rapordur. Veriler, üniversitenin kamuya açık kaynaklarından derlenmiş olup, 
+2024-2025 akademik yılına dair güncel bilgileri yansıtmaktadır. 
+Alıntılanan çalışmalar 
+1.​ Misyon ve Vizyon - Ankara - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 2025, 
+https://www.hacettepe.edu.tr/hakkinda/misyon_vizyon 
+2.​ Misyon ve Vizyon - Hacettepe Üniversitesi Tarih Bölümü, erişim tarihi Aralık 11, 
+2025, https://history.hacettepe.edu.tr/tr/menu/misyon_ve_vizyon-53 
+
+
+--- PAGE 12 ---
+3.​ Kurumsal Yapı - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 2025, 
+https://www.hacettepe.edu.tr/hakkinda/yapilanma 
+4.​ Öğrenci Toplulukları - Hacettepe Üniversitesi Spor Dostu Kampüs, erişim tarihi 
+Aralık 11, 2025, https://spordostu.hacettepe.edu.tr/tr/ogrenci_topluluklari-169 
+5.​ Academic Units - Üniversitem Hacettepe, erişim tarihi Aralık 11, 2025, 
+https://universitem.hacettepe.edu.tr/academic-units/ 
+6.​ Bölümler - Hacettepe Üniversitesi Tıp Fakültesi, erişim tarihi Aralık 11, 2025, 
+https://tip.hacettepe.edu.tr/tr/bolumler-18 
+7.​ Akademik Birimler - Üniversitem Hacettepe, erişim tarihi Aralık 11, 2025, 
+https://universitem.hacettepe.edu.tr/akademik_birimler/ 
+8.​ Araştırma Laboratuvarları - Ankara - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 
+2025, https://www.hacettepe.edu.tr/arastirma/arastirma_laboratuvarlari 
+9.​ Fakülte ve Bölümler - Hacettepe Üniversitesi Araştırma Laboratuvarları, erişim 
+tarihi Aralık 11, 2025, https://lab.hacettepe.edu.tr/tr/laboratuvarlar 
+10.​Uygulama ve Araştırma Merkezleri - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 
+2025, https://www.hacettepe.edu.tr/arastirma/arastirma_uygulama_merkezleri 
+11.​HACETTEPE ÜNİVERSİTESİ'ndeki Tüm Lisans Programları | YÖK Lisans Atlası, erişim 
+tarihi Aralık 11, 2025, https://yokatlas.yok.gov.tr/lisans-univ.php?u=1048 
+12.​Enstitümüze Bağlı Lisansüstü Eğitim Veren Anabilim Dalları, erişim tarihi Aralık 11, 
+2025, https://fenbilimleri.hacettepe.edu.tr/tr/menu/anabilim_dallari-25 
+13.​Undergraduate and Associate Degree Programs - Hacettepe University, erişim 
+tarihi Aralık 11, 2025, 
+https://www.hacettepe.edu.tr/teaching/undergraduate_programs 
+14.​Kütüphane Olanakları - Ankara - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 
+2025, https://hacettepe.edu.tr/yerleskedeyasam/kutuphaneler 
+15.​HACETTEPE UNİVERSİTESİ BOLOGNA AKTS BİLGİ PAKETİ/DERS ..., erişim tarihi 
+Aralık 11, 2025, https://akts.hacettepe.edu.tr/programlar.php?program_duzey=1 
+16.​Hacettepe Üniversitesi Taban Puanları 2024 - Milet Akademi, erişim tarihi Aralık 11, 
+2025, https://miletakademi.net/hacettepe-universitesi-taban-puanlari-2024 
+17.​Yüksek Lisans - HACETTEPE UNİVERSİTESİ BOLOGNA AKTS BİLGİ PAKETİ/DERS 
+KATALOĞU, erişim tarihi Aralık 11, 2025, 
+https://akts.hacettepe.edu.tr/programlar.php?program_duzey=3&submenuheader
+=1 
+18.​Programlar - Hacettepe Üniversitesi Sağlık Bilimleri Enstitüsü, erişim tarihi Aralık 11, 
+2025, https://saglikbilimleri.hacettepe.edu.tr/tr/menu/programlar-265 
+19.​Hakkımızda - Hacettepe Teknokent A.Ş., erişim tarihi Aralık 11, 2025, 
+https://www.hacettepeteknokent.com.tr/tr/hakkimizda_-1 
+20.​Teknokent - Ankara - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 2025, 
+https://www.hacettepe.edu.tr/inovasyon/teknokent 
+21.​Firma Rehberi - Hacettepe Teknokent A.Ş., erişim tarihi Aralık 11, 2025, 
+https://www.hacettepeteknokent.com.tr/tr/firma_rehberi 
+22.​Hacettepe Teknokent A.Ş., erişim tarihi Aralık 11, 2025, 
+https://www.hacettepeteknokent.com.tr/ 
+23.​Barınma Olanakları - Üniversitem Hacettepe, erişim tarihi Aralık 11, 2025, 
+https://universitem.hacettepe.edu.tr/barinma_olanaklari/ 
+
+
+--- PAGE 13 ---
+24.​Hacettepe Üniversitesi Barınma | Kampüs İçi ve Çevre Konaklama Seçenekleri, 
+erişim tarihi Aralık 11, 2025, https://hacettepe.biz/page/barinma.html 
+25.​hacettepe üniversitesi yurt kapasiteleri, erişim tarihi Aralık 11, 2025, 
+https://universitem.hacettepe.edu.tr/yurtkapasiteleri.pdf 
+26.​Sıhhiye Çevresindeki KYK'lar - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 2025, 
+https://hacettepe.biz/page/s-cevredeki-kyklar.html 
+27.​YURT YÖNETİMİ - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 2025, 
+https://barinma.hacettepe.edu.tr/ 
+28.​Öğrenci Toplulukları - Hacettepe Üniversitesi İktisadi ve İdari Bilimler Fakültesi, 
+erişim tarihi Aralık 11, 2025, 
+https://iibf.hacettepe.edu.tr/tr/menu/ogrenci_topluluklari-303 
+29.​Öğrenci Toplulukları - Hacettepe Üniversitesi, erişim tarihi Aralık 11, 2025, 
+https://hacettepe.biz/page/ogrenci-topluluklari.html 
+30.​HACETTEPE UNİVERSİTESİ BOLOGNA AKTS BİLGİ PAKETİ/DERS KATALOĞU, 
+erişim tarihi Aralık 11, 2025, 
+https://akts.hacettepe.edu.tr/programlar.php?program_duzey=2 
+
