@@ -31,7 +31,16 @@ DOCUMENT_PRIORITIES = {
     "EĞİTİM-ÖĞRETİM": 1.25,  # Ana Yönetmelik (Constitution) - Boost 25%
     "YÖNETMELİK": 1.10,      # Diğer Yönetmelikler (Laws) - Boost 10%
     "YÖNERGE": 1.0,          # Standart Yönergeler (Directives) - Baseline
-    "SIRALAMASI": 0.85       # Başarı Sıralaması vb. (Specific/Confusing) - Slight Penalty
+    "SIRALAMASI": 1.05       # Başarı Sıralaması (Ranking Rules) - Slight Boost to ensure visibility
+}
+
+# Dynamic Context Boosts (If query contains keywords, boost specific doc types)
+DYNAMIC_BOOSTS = {
+    "SIRALAMASI": ["sıralama", "derece", "ilk 3", "üçüncü", "birinci", "şeref", "yüksek şeref"],
+    "ÇAP": ["çap", "çift anadal", "ikinci anadal"],
+    "YANDAL": ["yandal", "yan dal", "sertifika"],
+    "YAZ OKULU": ["yaz okulu", "yaz dönemi"],
+    "KAYIT": ["kayıt yenileme", "ders seçimi", "ekle sil"]
 }
 
 # Hybrid RAG (Entity-based enhancement)

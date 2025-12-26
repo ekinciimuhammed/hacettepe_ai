@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pipeline.rag_engine import retrieve_context
 
-query = "mezun olmak icin gereken minumum gpa nedir"
+query = "Mezuniyet başarı sıralamasına girebilmek için mezuniyet GANO alt sınırı kaçtır?"
 print(f"--- Debugging Query: {query} ---")
 
 chunks = retrieve_context(query)

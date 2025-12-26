@@ -277,6 +277,12 @@ input {
     color: #111;
 }
 
+.logo-area img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
 button#send-btn {
     background-color: var(--accent-color);
     color: white;

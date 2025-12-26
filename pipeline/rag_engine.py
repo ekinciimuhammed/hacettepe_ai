@@ -15,16 +15,31 @@ if ENABLE_CACHE:
     from pipeline.cache import QueryCache
     _query_cache = QueryCache(cache_dir=CACHE_DIR, max_age_hours=CACHE_MAX_AGE_HOURS)
 
-def get_document_priority(filename):
-    from config import DOCUMENT_PRIORITIES
-    filename_upper = filename.upper()
+def get_document_priority(filename, query=""):
+    from config import DOCUMENT_PRIORITIES, DYNAMIC_BOOSTS
     
-    # Check for keys in filename
+    filename_upper = filename.upper()
+    query_lower = query.lower() if query else ""
+    
+    # 1. Base Static Priority
+    priority = 1.0
     for key, multiplier in DOCUMENT_PRIORITIES.items():
         if key in filename_upper:
-            return multiplier
+            priority = multiplier
+            break
             
-    return 1.0 # Default
+    # 2. Dynamic Context Boost
+    # If the user asks about "Ranking", boost "SIRALAMASI" docs significantly
+    for doc_key, keywords in DYNAMIC_BOOSTS.items():
+        if doc_key in filename_upper:
+            # Check if query matches this topic
+            for keyword in keywords:
+                if keyword in query_lower:
+                    # Apply Turbo Boost (e.g. 1.5x on top of static)
+                    # This ensures the specific directive overrides the general constitution
+                    return priority * 1.5
+                    
+    return priority
 
 def retrieve_context(query):
     """
@@ -74,7 +89,7 @@ def retrieve_context(query):
             base_score = (VECTOR_WEIGHT * vector_score) + (ENTITY_WEIGHT * entity_score)
             
             # 4. Authority Boost
-            priority_multiplier = get_document_priority(source)
+            priority_multiplier = get_document_priority(source, query)
             final_score = base_score * priority_multiplier
             
             scored_results.append({
@@ -121,9 +136,26 @@ def generate_answer_enhanced(query):
     }
     """
     # Check cache first
-    # (Skipping cache logic for enhanced mode for now to ensure freshness, 
-    #  or we'd need to cache the dict structure)
+    if ENABLE_CACHE:
+        cached_result = _query_cache.get(query)
+        if cached_result:
+            # If the cached result is a string (legacy), we might need to wrap it?
+            # Ideally, we clear old cache, but for now assuming it handles dicts if we saved dicts.
+            # If it's a dict, return it directly. 
+            if isinstance(cached_result, dict):
+                 return cached_result
+            # If it's a string, it's legacy cache, let's ignore or wrap it.
+            # Choosing to ignore legacy string cache for this enhanced function to avoid format errors
+            pass 
             
+    # --- 0. VERIFIED FAQ LAYER ---
+    from pipeline.faq_manager import FAQManager
+    faq_manager = FAQManager()
+    faq_match = faq_manager.find_match(query)
+    if faq_match:
+        print(f"🛡️ FAQ HIT: {query}")
+        return faq_match
+
     # --- INTENT GATING ---
     from pipeline.intent_router import IntentRouter, Intent
     
@@ -181,12 +213,18 @@ def generate_answer_enhanced(query):
         response.raise_for_status()
         final_answer = response.json()["response"]
         
-        return {
+        result = {
             "answer": final_answer,
             "sources": unique_sources,
             "chunks": context_chunks,
             "intent": intent.value
         }
+        
+        # Cache the result ONLY if we found valid sources (Academic Context)
+        if ENABLE_CACHE and unique_sources:
+            _query_cache.set(query, result)
+            
+        return result
 
     except Exception as e:
         return {
