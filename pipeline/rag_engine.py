@@ -15,15 +15,21 @@ if ENABLE_CACHE:
     from pipeline.cache import QueryCache
     _query_cache = QueryCache(cache_dir=CACHE_DIR, max_age_hours=CACHE_MAX_AGE_HOURS)
 
+def get_document_priority(filename):
+    from config import DOCUMENT_PRIORITIES
+    filename_upper = filename.upper()
+    
+    # Check for keys in filename
+    for key, multiplier in DOCUMENT_PRIORITIES.items():
+        if key in filename_upper:
+            return multiplier
+            
+    return 1.0 # Default
+
 def retrieve_context(query):
     """
     Retrieves relevant chunks from LanceDB based on query.
-    Supports Hybrid RAG with entity-based re-ranking.
-    
-    1. Embed query
-    2. Search vector DB
-    3. (Hybrid) Extract entities from query and chunks
-    4. (Hybrid) Re-rank based on vector + entity scores
+    Supports Hybrid RAG with entity-based re-ranking + Document Authority.
     """
     query_embedding = get_embedding(query)
     if not query_embedding:
@@ -36,7 +42,7 @@ def retrieve_context(query):
     if not results:
         return []
     
-    # Hybrid RAG: Entity-based re-ranking
+    # Hybrid RAG: Entity-based re-ranking + Doc Importance
     if ENABLE_HYBRID_RAG:
         # Extract entities from query
         query_entities = extract_entities(query)
@@ -54,26 +60,22 @@ def retrieve_context(query):
             except Exception as e:
                 chunk_entities = {}
             
-            # Vector similarity score (distance -> similarity)
-            # LanceDB returns _distance (lower is better)
-            # For L2 distance, typical range is 0-2 (0 = identical)
-            # For cosine distance, range is 0-2 (0 = identical, 2 = opposite)
+            # 1. Vector Score
             distance = r.get('_distance', None)
-            
             if distance is None:
-                # Fallback: try to get score directly
                 vector_score = r.get('_score', 0.5)
             else:
-                # Convert distance to similarity
-                # Normalize: assume max distance of 2.0
-                # similarity = 1 - (distance / 2.0)
                 vector_score = max(0.0, min(1.0, 1.0 - (distance / 2.0)))
             
-            # Entity overlap score
+            # 2. Entity Score
             entity_score = calculate_entity_overlap(query_entities, chunk_entities)
             
-            # Combined score
-            final_score = (VECTOR_WEIGHT * vector_score) + (ENTITY_WEIGHT * entity_score)
+            # 3. Base Score
+            base_score = (VECTOR_WEIGHT * vector_score) + (ENTITY_WEIGHT * entity_score)
+            
+            # 4. Authority Boost
+            priority_multiplier = get_document_priority(source)
+            final_score = base_score * priority_multiplier
             
             scored_results.append({
                 "text": text,
@@ -81,7 +83,8 @@ def retrieve_context(query):
                 "score": final_score,
                 "vector_score": vector_score,
                 "entity_score": entity_score,
-                "_distance": distance  # Debug için
+                "priority_boost": priority_multiplier,
+                "_distance": distance
             })
         
         # Sort by final score (descending)
@@ -91,52 +94,64 @@ def retrieve_context(query):
         context_items = scored_results[:TOP_K]
         
         # Debug info
-        print(f"\n🔍 Hybrid RAG Search Results:")
-        print(f"   Query entities: {list(query_entities.keys())}")
+        print(f"\n🔍 Hybrid + Authority Search Results:")
         for i, item in enumerate(context_items[:3], 1):
-            dist_str = f"{item['_distance']:.4f}" if item['_distance'] is not None else "N/A"
-            print(f"  [{i}] Score: {item['score']:.3f} (V:{item['vector_score']:.3f} + E:{item['entity_score']:.3f})")
-            print(f"      Distance: {dist_str} | Source: {item['source']}")
-            print(f"      Text preview: {item['text'][:80]}...")
+            print(f"  [{i}] Final: {item['score']:.3f} | Base: {(item['score']/item['priority_boost']):.3f} x Boost: {item['priority_boost']}")
+            print(f"      Source: {item['source']}")
         
     else:
-        # Standard Vector RAG
+        # Fallback for non-hybrid (should typically be enabled)
         context_items = []
         for r in results:
-            text = r.get("text") or r["text"]
-            source = r.get("source") or r["source"]
-            
             context_items.append({
-                "text": text,
-                "source": source
+                "text": r.get("text"),
+                "source": r.get("source")
             })
         
     return context_items
 
-def generate_answer(query):
+def generate_answer_enhanced(query):
     """
-    RAG Pipeline with Caching:
-    0. Check cache
-    1. Retrieve context
-    2. Build Prompt
-    3. Call LLM
-    4. Cache result
+    Returns a dictionary:
+    {
+        "answer": str,
+        "sources": list of str (filenames),
+        "chunks": list of dicts {text, source, score},
+        "intent": str
+    }
     """
     # Check cache first
-    if ENABLE_CACHE:
-        cached_answer = _query_cache.get(query)
-        if cached_answer:
-            return cached_answer
+    # (Skipping cache logic for enhanced mode for now to ensure freshness, 
+    #  or we'd need to cache the dict structure)
+            
+    # --- INTENT GATING ---
+    from pipeline.intent_router import IntentRouter, Intent
     
+    router = IntentRouter()
+    intent, suggestion = router.route(query)
+    
+    # 1. Handle Non-RAG Intents
+    if intent != Intent.ACADEMIC_READY:
+        return {
+            "answer": suggestion if suggestion else "İsteğinizi anlayamadım.",
+            "sources": [],
+            "chunks": [],
+            "intent": intent.value
+        }
+        
+    # 2. Handle Academic RAG
     context_chunks = retrieve_context(query)
     
     if not context_chunks:
-        # Fallback if no context found (or empty DB)
-        context_text = "No relevant context found in documents."
-        sources_text = "None"
-    else:
-        context_text = "\n\n".join([f"--- Chunk from {c['source']} ---\n{c['text']}" for c in context_chunks])
-        sources_text = ", ".join(set([c['source'] for c in context_chunks]))
+        return {
+            "answer": "Bu konu hakkında elimdeki akademik belgelerde yeterli bilgi bulunmamaktadır.",
+            "sources": [],
+            "chunks": [],
+            "intent": intent.value
+        }
+
+    context_text = "\n\n".join([f"--- Chunk from {c['source']} ---\n{c['text']}" for c in context_chunks])
+    unique_sources = sorted(list(set([c['source'] for c in context_chunks])))
 
     prompt = f"""
     {SYSTEM_PROMPT}
@@ -157,7 +172,7 @@ def generate_answer(query):
         "prompt": prompt,
         "stream": False,
         "options": {
-            "temperature": 0.1  # Strict adherence to facts
+            "temperature": 0.1
         }
     }
     
@@ -166,34 +181,34 @@ def generate_answer(query):
         response.raise_for_status()
         final_answer = response.json()["response"]
         
-        # Append sources to the final answer
-        if sources_text and sources_text != "None":
-            # Append Sources and also the actual text chunks
-            sources_section = f"\n\n**Kaynaklar:**\n{sources_text}"
-            
-            # Format chunks nicely
-            chunks_section = "\n\n**Kullanılan Chunklar:**\n"
-            for i, chunk_data in enumerate(context_chunks):
-                full_text = chunk_data['text']
-                # Showing full text as requested
-                chunks_section += f"\n[{i+1}] ({chunk_data['source']}):\n{full_text}\n"
-            
-            final_result = f"{final_answer}{sources_section}{chunks_section}"
-            
-            # Cache the result
-            if ENABLE_CACHE:
-                _query_cache.set(query, final_result, metadata={
-                    "sources": sources_text,
-                    "num_chunks": len(context_chunks)
-                })
-            
-            return final_result
-        
-        # Cache simple answer too
-        if ENABLE_CACHE:
-            _query_cache.set(query, final_answer)
-        
-        return final_answer
+        return {
+            "answer": final_answer,
+            "sources": unique_sources,
+            "chunks": context_chunks,
+            "intent": intent.value
+        }
+
     except Exception as e:
-        error_msg = f"Error generating response: {e}"
-        return error_msg
+        return {
+            "answer": f"Bir hata oluştu: {str(e)}",
+            "sources": [],
+            "chunks": [],
+            "intent": "ERROR"
+        }
+
+def generate_answer(query):
+    """
+    Legacy wrapper that returns a string (for terminal/streamlit apps).
+    """
+    result = generate_answer_enhanced(query)
+    text = result["answer"]
+    
+    if result["sources"]:
+        text += f"\n\n**Kaynaklar:**\n" + ", ".join(result["sources"])
+        
+    if result["chunks"]:
+        text += "\n\n**Kullanılan Chunklar:**\n"
+        for i, c in enumerate(result["chunks"]):
+            text += f"\n[{i+1}] ({c['source']}):\n{c['text']}\n"
+            
+    return text

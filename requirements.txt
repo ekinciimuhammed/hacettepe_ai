@@ -6,3 +6,6 @@ watchdog
 numpy
 pandas
 pyarrow
+docling
+streamlit
+flask

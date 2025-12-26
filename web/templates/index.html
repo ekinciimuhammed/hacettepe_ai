@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacettepe Akademik Asistan</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/tr/3/30/Hacettepe_%C3%9Cniversitesi_Logosu.svg.png">
+
+    <!-- Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="https://upload.wikimedia.org/wikipedia/tr/3/30/Hacettepe_%C3%9Cniversitesi_Logosu.svg.png"
+                    alt="Logo">
+                <h2>Hacettepe<br><span>Asistan</span></h2>
+            </div>
+
+            <nav class="menu">
+                <button class="menu-item active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Sohbet
+                </button>
+                <div class="status-card">
+                    <div class="status-indicator online"></div>
+                    <div>
+                        <p class="status-title">Sistem Aktif</p>
+                        <p class="status-subs">LLM v3.1 Hazır</p>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="footer-info">
+                <p>v2.0 (Docling + RAG)</p>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-header">
+                <h3>Akademik Asistan</h3>
+                <p>Resmi yönetmeliklere dayalı yapay zeka</p>
+            </header>
+
+            <div class="messages-container" id="messages-container">
+                <!-- Welcome Message -->
+                <div class="message bot-message">
+                    <div class="avatar">🤖</div>
+                    <div class="bubble">
+                        <p>Merhaba! Ben Hacettepe Akademik Asistan. 👋</p>
+                        <p>Mezuniyet şartları, ders kayıtları, ÇAP/Yandal gibi konularda sorularınızı yanıtlayabilirim.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Sorunuzu buraya yazın..." autocomplete="off">
+                    <button id="send-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <p class="disclaimer">Yasal Uyarı: Bu asistan sadece bilgilendirme amaçlıdır.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Source Preview Modal -->
+    <div id="source-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Belge Kaynağı</h3>
+                <button id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-label">Yapay Zeka bu cevabı üretirken şu kısımdan faydalandı:</p>
+                <div id="modal-text" class="modal-text-box">
+                    <!-- Chunk content will go here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-open-pdf" href="#" target="_blank" class="modal-action-btn">
+                    Tam Dokümanı Görüntüle ↗
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

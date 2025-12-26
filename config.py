@@ -13,12 +13,26 @@ LLM_MODEL = "llama3.1:8b"  # User requested switch to installed model
 # Chunking
 # Dynamic chunking will try to respect "Madde" boundaries.
 # CHUNK_SIZE here acts as a "safety limit" for very long articles.
-CHUNK_SIZE = 4000  
+# Document Processing
+USE_DOCLING = True
+DOCLING_OCR_CONFIDENCE = 0.8  # Threshold to reject bad OCR
+CHUNK_SIZE = 1000 
 CHUNK_OVERLAP = 200
 
 # RAG
 TOP_K = 6  # Artırıldı: Daha fazla chunk getir, entity re-ranking daha iyi çalışsın
 MIN_SCORE_THRESHOLD = 0.35  # Geri getirildi: Kalite kontrolü için threshold
+# Intent Gating
+MIN_QUERY_LENGTH = 3 # Words
+
+# Document Hierarchy (Re-ranking Weights)
+# Multipliers to boost "Constitutional" docs over "Specific Directives"
+DOCUMENT_PRIORITIES = {
+    "EĞİTİM-ÖĞRETİM": 1.25,  # Ana Yönetmelik (Constitution) - Boost 25%
+    "YÖNETMELİK": 1.10,      # Diğer Yönetmelikler (Laws) - Boost 10%
+    "YÖNERGE": 1.0,          # Standart Yönergeler (Directives) - Baseline
+    "SIRALAMASI": 0.85       # Başarı Sıralaması vb. (Specific/Confusing) - Slight Penalty
+}
 
 # Hybrid RAG (Entity-based enhancement)
 ENABLE_HYBRID_RAG = True  # Hybrid RAG'i aktif et
@@ -36,16 +50,16 @@ RETRY_DELAY = 2  # seconds
 
 # System Prompt
 SYSTEM_PROMPT = """
-Sen **Hacettepe_Akademik_Asistan**'sın (Sürüm 1.0).
-Görevin: Hacettepe Üniversitesi'ne ait resmî akademik belgeleri referans alarak bilgi vermek.
+Sen Hacettepe Üniversitesi öğrencileri için geliştirilmiş, yardımsever ve dürüst bir akademik asistansın.
+Amacın: Öğrencilerin yönetmelik, mezuniyet, ders seçimi ve kampüs yaşamı hakkındaki sorularına, SADECE sana verilen belge parçalarına (Context) dayanarak cevap vermektir.
 
-**KURALLAR:**
-1. **Kaynak Sınırı:** Sadece sana verilen "CONTEXT" (bağlam) içindeki bilgileri kullan.
-2. **Uydurma Yasak:** Belgelerde olmayan bir bilgi hakkında asla tahmin, yorum veya ekleme yapma.
-3. **Öncelik:** Önce yüklenen belge bağlamını kullan.
-4. **Yanıt Stili:** Kısa, öz, net, tarafsız, resmi ve akademik bir dil kullan. Kişisel yorum veya duygu katma.
-5. **Kapsam Dışı:** Politik, dini, tıbbi, hukuki veya kişisel veri içeren sorulara "Bu konu Hacettepe Akademik Asistanı’nın kapsamı dışındadır." yanıtını ver.
-6. **Eğer Bağlam Yoksa:** Soru akademik ise "Belge bulunmadığı için yanıt veremiyorum." de. Soru günlük sohbet (selam vb.) ise kısa bir yanıt ver.
+Kurallar:
+1. SADECE verilen "CONTEXT" bilgisini kullan. Kendi dış bilgilerini kullanma.
+2. Eğer verilen metinlerde sorunun cevabı KESİN OLARAK yoksa, uydurma. "Belgelerde bu bilgi yer almıyor" de.
+3. "Şeref öğrencisi", "Sıralama", "ÇAP" gibi ÖZEL DURUMLARI, GENEL KURALLARDAN ayır. Örneğin, genel mezuniyet ortalaması ile dereceye girme ortalamasını karıştırma.
+4. Çelişkili bilgiler görürsen, GENEL olanı (tüm öğrenciler için geçerli olanı) temel al ve özerl durumu istisna olarak belirt.
+5. Cevabın kısa, net ve anlaşılır olsun. Resmi ama samimi bir dil kullan.
+6. Asla var olmayan bir yönetmelik maddesi uydurma.
 
-Bunu sakın unutma: Sen sadece belgelerdeki gerçeği yansıtan bir asistansın.
+Eğer sorulan soru akademik veya üniversite ile ilgili değilse (örneğin futbol, yemek tarifi vb.), kibarca cevap veremeyeceğini belirt.
 """
